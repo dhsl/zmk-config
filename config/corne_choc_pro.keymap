@@ -14,6 +14,8 @@
 #define RAISE 2
 #define ADJ   3
 
+#define HYPER LG(LC(LA(LSHFT)))
+
 &sk {
     release-after-ms = <900>;
     quick-release;
@@ -65,12 +67,12 @@
             // |  TAB |  Q  |  W  |  F  |  P  |  B  | xxx | xxx |  J  |  L  |  U  |  Y  |  ;  | BSPC |
             // | CTRL |  A  |  R  |  S  |  T  |  G  | xxx | xxx |  M  |  N  |  E  |  I  |  O  |  '   |
             // | SHFT |  Z  |  X  |  C  |  D  |  V  |           |  K  |  H  |  ,  |  .  |  /  | ESC  |
-            //                    | CMD | LWR | SPC |           |S-SHF| RSE | OPT |
+            //                    | CMD | LWR | SPC |           |S-SHF| RSE |HYPER|
             bindings = <
                 &kp TAB   &kp Q &kp W &kp F &kp P &kp B &none &none &kp J &kp L &kp U     &kp Y   &kp SEMI &kp BSPC
                 &kp LCTRL &kp A &kp R &kp S &kp T &kp G &none &none &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp D &kp V             &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp LGUI &mo LOWER &kp SPACE        &smart_shft RSHFT 0 &mo RAISE &kp RALT
+                                &kp LGUI &mo LOWER &kp SPACE        &smart_shft RSHFT 0 &mo RAISE &kp HYPER
             >;
         };
 
@@ -83,12 +85,12 @@
             // |  `   |  !  |  @  |  #  |  $  |  %  | xxx | xxx |  ^  |  &   |  *  |  -  |  =  | DEL  |
             // | CTRL |  ß  |  ä  |  (  |  {  |  [  | xxx | xxx | LFT | DWN  |  UP | RGT |  :  |  "   |
             // | SHFT |  ü  |  ö  |  )  |  }  |  ]  |           | HOME| PGDN |PGUP | END |  \  |  |   |
-            //                    | CMD | ___ | SPC |           | RET | ADJ  | OPT |
+            //                    | CMD | ___ | SPC |           | RET | ADJ  |HYPER|
             bindings = <
                 &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &none &none &kp CARET &kp AMPS  &kp STAR  &kp MINUS &kp EQUAL &kp DEL
                 &kp LCTRL &de_sz   &de_ae &kp LPAR &kp LBRC &kp LBKT  &none &none &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp COLON &kp DQT
                 &kp LSHFT &de_ue   &de_oe &kp RPAR &kp RBRC &kp RBKT              &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp BSLH  &kp PIPE
-                                          &kp LGUI &trans   &kp SPACE             &kp RET   &mo RAISE &kp RALT
+                                          &kp LGUI &trans   &kp SPACE             &kp RET   &mo RAISE &kp HYPER
             >;
         };
 
